@@ -17,13 +17,13 @@ sequenceDiagram
     participant A as App API
     participant S as S3 bucket (private)
     B->>A: I want to upload invoice.pdf (type, size)
-    A->>A: Check user, type, size; create object key
+    A->>A: Check user, type, size, create object key
     A-->>B: Pre-signed POST (URL + fields), expires in 5 min
     B->>S: Upload file with those fields
     S-->>B: 204 No Content
     B->>A: Upload done (object key)
     A->>S: HEAD object: confirm size and type
-    A->>A: Save the record; queue virus scan
+    A->>A: Save the record, queue virus scan
 ```
 
 ## Rules that make it safe
