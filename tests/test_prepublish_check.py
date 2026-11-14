@@ -35,7 +35,7 @@ def test_allowed_text_has_no_hits(text):
         ("write to real.person@gmail.com", "email-address"),  # prepublish-ignore
         ("call +91 98765 43210", "phone-number"),  # prepublish-ignore
         ("call 9876543210", "phone-number"),  # prepublish-ignore
-        ("key AKIAABCDEFGHIJKLMNOP", "aws-access-key"),  # prepublish-ignore
+        ("key AKIA" + "ABCDEFGHIJKLMNOP", "aws-access-key"),  # prepublish-ignore
         ("arn:aws:iam::123456789012:role/x", "aws-arn-with-account"),  # prepublish-ignore
         ("account 123456789012", "aws-account-id"),  # prepublish-ignore
         ("-----BEGIN RSA PRIVATE KEY-----", "private-key"),  # prepublish-ignore
